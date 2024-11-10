@@ -20,3 +20,12 @@ print(f"価格：{price:7d}")
 
 import math
 print(f"πの値はおよそ{math.pi:.5f}です")
+
+# 9
+
+x = 300
+y = 150
+z = 200
+
+# KeyError print("spam: {x}, ham: {y}, eggs: {z}".format(x, y, z))
+
