@@ -62,3 +62,32 @@ print(function(3))
 # [1, 3]
 # デフォルト引数のリストは関数呼び出し時に1度しか評価されません
 # そのため、関数が呼び出されるたびにデフォルト引数のリストが更新されていきます
+
+# 7
+def function(name, *args, **kwargs):
+    print(name)    # 通常の引数
+    print(args)    # タプルとして受け取られる可変長引数
+    print(kwargs)  # 辞書として受け取られるキーワード引数
+
+function("spam", "ham", kwarg1="eggs", kwarg2="spamhameggs")
+# spam
+# ('ham',)
+# {'kwarg1': 'eggs', 'kwarg2': 'spamhameggs'}
+
+# 8
+# 省略
+
+# 9
+func = lambda a, b: (b + 1, a * 2)
+x, y = 1, 2
+x, y = func(x, y)
+print(x, y)
+# 3 2
+
+# 10
+def func():
+    """これはdocstringです"""
+    pass
+
+print(func.__doc__)
+# これはdocstringです
