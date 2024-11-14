@@ -14,13 +14,11 @@ greet("太郎")
 
 x = greet("太郎")
 print(x)
-# None
 # 関数の戻り値がない場合はNoneが返されます
 
 x = greet
 y = x("太郎")
 print(y)
-# None
 # 関数の戻り値がない場合はNoneが返されます
 
 # x = greet "太郎"
