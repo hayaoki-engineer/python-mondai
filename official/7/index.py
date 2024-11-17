@@ -1,5 +1,6 @@
 # 1
 
+
 # 2
 # モジュールから特定の関数のみをインポートする場合は from モジュール名 import 関数名 を使用します
 from calc import add
