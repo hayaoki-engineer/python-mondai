@@ -95,3 +95,64 @@ def fib(n):    # write Fibonacci series less than n
 
 # Now call the function we just defined:
 fib(5)
+
+# 4.9
+
+# 4.9.1 デフォルトの引数
+
+def ask_ok(prompt, retries=4, reminder='Please try again!'):
+    while True:
+        reply = input(prompt)
+        if reply in {'y', 'ye', 'yes'}:
+            return True
+        if reply in {'n', 'no', 'nop', 'nope'}:
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise ValueError('invalid user response')
+        print(reminder)
+
+# 4.9.2 キーワード引数
+
+def parrot(voltage, state='a stiff', action='voom'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.", end=' ')
+    print("E's", state, "!")
+
+# 位置引数で呼び出し
+parrot(1000)
+# キーワード引数で呼び出し
+parrot(voltage=1000)
+# キーワード引数で呼び出し（actionも指定）
+parrot(voltage=1000000, action='VOOOOOM')
+# 位置引数で呼び出し（voltage, state, actionを指定）
+parrot('a million', 'bereft of life', 'jump')
+
+# 4.9.3 特殊なパラメータ
+
+# 4.9.4 任意の引数リスト
+
+def write_multiple_items(file, separator, *args):
+    file.write(separator.join(args))
+
+# 4.9.5 引数リストのアンパック
+
+print(list(range(3, 6)))
+# [3, 4, 5]
+
+args = [3, 6]
+print(list(range(*args)))
+# [3, 4, 5]
+
+# 4.9.6 ラムダ式
+
+def make_incrementor(n):
+    return lambda x: x + n
+
+f = make_incrementor(42)
+print(f(0))
+# 42
+print(f(1))
+# 43
+
+# make_incrementor 関数は、引数 n を使ってラムダ関数を生成し、そのラムダ関数は n の値を保持したまま、任意の x に対して加算を行うことができます。これが、ラムダ関数とクロージャの基本的な動作です。
