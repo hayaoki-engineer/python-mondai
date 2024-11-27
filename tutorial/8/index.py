@@ -67,3 +67,9 @@ except ZeroDivisionError as e:
   # 例外クラスの名前を表示
   print(type(e))
 
+try:
+  a = [1, 2, 3, 4]
+  print(a[100])
+except IndexError as e:
+  print(e)
+  print(type(e))
