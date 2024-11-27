@@ -57,3 +57,13 @@
 # finally:
 #   print("最後に終了")
 
+try:
+  a = 1
+  b = 0
+  print(a / b)
+except ZeroDivisionError as e:
+  # 例外メッセージを表示
+  print(e)
+  # 例外クラスの名前を表示
+  print(type(e))
+
