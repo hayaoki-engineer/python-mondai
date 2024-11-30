@@ -49,15 +49,41 @@ def value(arg):
   return arg
 
 result1 = value(0) and value(1) and value(2)
-print(result1)
-# => 0
 # 0がFalseと評価されるため、その時点でand演算の結果がFalseとなり、以降のvalue関数は評価されない
+result2 = value(0) or value(1) or value(2)
+# がFalseと評価されるため、次のvalue(1)が評価され、結果は1となる
+
+print(result1, result2)
+# => 0 1
 
 # 23
+
+# setの性質
+
+# 追加した要素の順序は保持されない
+
+sample_set = {3, 1, 2}
+print(sample_set)
+# => {1, 2, 3} # 要素の順序は保持されない
+
+# 要素を追加
+sample_set.add(4)
+print(sample_set)
+# => {1, 2, 3, 4} # 追加した要素の順序は保持されない
 
 # 26
 
 # 29
+
+try:
+  times = input("分割回数:")
+  value = 100 / int(times)
+  print(value)
+except () :
+  print('エラーが発生しました')
+
+# ValueError: 数値ではない文字列が入力された場合
+# ZeroDivisionError: 0が入力された場合
 
 # 33
 
